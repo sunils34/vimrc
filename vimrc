@@ -35,10 +35,9 @@ if has("gui_running")	" GUI color and font settings
   set background=dark 
   set t_Co=256          " 256 color mode
   set cursorline        " highlight current line
-  colors moria
+  colors vgod
 else
 " terminal color settings
-  colors vgod
 endif
 
 set clipboard=unnamed	" yank to the system register (*) by default
@@ -49,7 +48,6 @@ set wildmenu            " wild char completion menu
 
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
-
 set autoindent		" auto indentation
 set incsearch		" incremental search
 set nobackup		" no *~ backup files
@@ -302,12 +300,18 @@ let g:SuperTabDefaultCompletionType = "context"
 " --- EasyMotion
 "let g:EasyMotion_leader_key = '<Leader>m' " default is <Leader>w
 hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade  Comment
+hi Comment guifg=#4873e8 guibg=NONE
 
 
 " --- TagBar
 " toggle TagBar with F7
 nnoremap <silent> <F7> :TagbarToggle<CR> 
+
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <C-F11> :!ctags -R -f ~/.vim/qttags /usr/include/<CR>
+map <C-F10> :!cscope -R<CR>
+map <C-F9> :set mouse=<CR>
+
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
 
