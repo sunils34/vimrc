@@ -163,6 +163,8 @@ cnoremap <C-K>      <C-U>
 " ,p toggles paste mode
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
+nmap \bu :set expandtab! tabstop=4 shiftwidth=4 softtabstop=4<CR>
+
 " allow multiple indentation/deindentation in visual mode
 vnoremap < <gv
 vnoremap > >gv
